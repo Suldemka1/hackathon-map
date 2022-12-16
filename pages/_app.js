@@ -1,15 +1,14 @@
-import '../../styles/globals.css'
-import Map from "../components/Map"
+import '../styles/globals.css'
+import {Provider} from "react-redux"
+import {wrapper} from "../store";
 
-function MyApp({ Component, pageProps }) {
-  return (
-          <>
-            <Map />
-            <Component {...pageProps} />
-          </>
-      )
-
-
+function MyApp({Component, ...pageProps}) {
+    const {store, props} = wrapper.useWrappedStore(pageProps)
+    return (
+        <Provider store={store}>
+            <Component {...props.pageProps} />
+        </Provider>
+    )
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
