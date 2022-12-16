@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import {averageTemperature} from "../../../services/averageTemperature";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Marker, Popup, useMapEvent} from "react-leaflet";
 import L from "leaflet";
+import {setDisplayBottomBar} from "../../../store/slices/CardSettingsSlice";
 
 const CitiesMarker = (params) => {
     const cardSettings = useSelector(state => state.cardSettings)
     const [isPopupOpen, setIsPopupOpen] = useState(false)
+    const dispatch = useDispatch()
 
     const factory = new L.divIcon({
         className: '',
@@ -66,7 +68,7 @@ const CitiesMarker = (params) => {
                         <h6>Температура</h6>
                         <h6>20C</h6>
                     </div>
-                    <button className="border rounded border-white py-2">Прогноз на наделю</button>
+                    <button onClick={() => dispatch(setDisplayBottomBar())} className="border rounded border-white py-2">Прогноз на наделю</button>
                 </div>
             </Popup>
         </Marker>

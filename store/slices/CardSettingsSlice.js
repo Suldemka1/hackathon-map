@@ -14,6 +14,7 @@ const cardSettingsSlice = createSlice({
         },
         setDisplayBottomBar: (state) => {
             state.displayBottomBar = !state.displayBottomBar
+            console.log(state.displayBottomBar)
         }
     }
 })

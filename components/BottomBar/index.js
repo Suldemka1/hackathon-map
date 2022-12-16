@@ -3,21 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import {SlArrowDown} from "react-icons/sl";
 import {useDispatch, useSelector} from "react-redux";
+import {setDisplayBottomBar} from "../../store/slices/CardSettingsSlice";
 
 const BottomBar = () => {
     const bottomBar = useSelector(state => state.cardSettings)
     const dispatch = useDispatch()
     return (
         <div>
-            {bottomBar.displayBottomBar && <div>asd</div>}
-            <div className="absolute bottom-0 left-0 w-4/5 max-h-[400px] bg-gray-700 text-white text-lg px-4 py-4 z-[1500]">
 
+
+            {bottomBar.displayBottomBar && <div
+                className="absolute bottom-0 left-0 w-4/5 max-h-[400px] bg-gray-700 text-white text-lg px-4 py-4 z-[1500]">
                 <div className="flex flex-row  justify-between h-12">
                     <div>
                         <h1 className="text-2xl">Прозноз погоды на неделю</h1>
                     </div>
                     <div>
-                        <button onClick={() => dispatch(setDisplayBottomBar())} className="px-2 py-2 border-2 rounded-full border-white">
+                        <button onClick={() => dispatch(setDisplayBottomBar())}
+                                className="px-2 py-2 border-2 rounded-full border-white">
                             <SlArrowDown/>
                         </button>
                     </div>
@@ -61,6 +64,8 @@ const BottomBar = () => {
 
 
             </div>
+            }
+
         </div>
 
     );
