@@ -2,7 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
     displayTemperature: false,
-    displayBottomBar: false
+    displayBottomBar: false,
+    displaySidebar: false
 }
 
 const cardSettingsSlice = createSlice({
@@ -14,11 +15,13 @@ const cardSettingsSlice = createSlice({
         },
         setDisplayBottomBar: (state) => {
             state.displayBottomBar = !state.displayBottomBar
-            console.log(state.displayBottomBar)
+        },
+        setDisplaySidebar: (state) => {
+            state.displaySidebar = !state.displaySidebar
         }
     }
 })
 
 
-export const {setDisplayTemperature, setDisplayBottomBar} = cardSettingsSlice.actions
+export const {setDisplayTemperature, setDisplayBottomBar, setDisplaySidebar} = cardSettingsSlice.actions
 export default cardSettingsSlice.reducer

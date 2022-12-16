@@ -38,6 +38,41 @@ export const getServerSideProps = async () => {
                 lat: 51.28939,
                 long: 91.56686
             }
+        },
+        {
+            name: "Красноярск",
+            coordinates: {
+                lat: 56.02,
+                long: 92.87
+            }
+        },
+        {
+            name: "Абакан",
+            coordinates: {
+                lat: 53.43,
+                long: 91.25
+            }
+        },
+        {
+            name: "Саяногорск",
+            coordinates: {
+                lat: 53.06,
+                long: 91.24
+            }
+        },
+        {
+            name: "Сорск",
+            coordinates: {
+                lat: 54.0,
+                long: 90.15
+            }
+        },
+        {
+            name: "Черногорск",
+            coordinates: {
+                lat: 53.49,
+                long: 91.17
+            }
         }
     ]
 

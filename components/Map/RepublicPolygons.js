@@ -21,7 +21,7 @@ const RepublicPolygons = () => {
                                 fillOpacity: .03,
                             })}
 
-                            className="hover:fill-white hover:transition hover:ease-in-out hover:duration-400 outline-none border-none cursor-none"
+                            className="hover:fill-white hover:transition hover:ease-in-out hover:duration-400 outline-none border-none cursor-crosshair"
 
                         >
                             {/*<Tooltip sticky>{item.properties.description}</Tooltip>*/}

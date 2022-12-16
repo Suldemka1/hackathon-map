@@ -21,6 +21,7 @@ const initialState = {
     sunrise: [],
     sunset: [],
 
+    forecastWeatherCode: [],
 
     forecastTime: [],
     forecastTemperature: [],
@@ -47,6 +48,7 @@ const forecastSlice = createSlice({
                 state.sunrise = action.payload.sunrise
                 state.sunset = action.payload.sunset
 
+                state.forecastWeatherCode = action.payload.forecastWeatherCode
                 state.forecastTime = action.payload.forecastTime
                 state.forecastTemperatureMax = action.payload.forecastTemperatureMax
                 state.forecastTemperatureMin = action.payload.forecastTemperatureMin
@@ -65,6 +67,7 @@ const forecastSlice = createSlice({
                         sunrise: action.sunrise,
                         sunset: action.sunset,
 
+                        forecastWeatherCode: action.forecastWeatherCode,
                         forecastTime: action.forecastTime,
                         forecastTemperatureMax: action.forecastTemperatureMax,
                         forecastTemperatureMin: action.forecastTemperatureMin,
