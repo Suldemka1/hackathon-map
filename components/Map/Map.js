@@ -4,6 +4,7 @@ import TileLayers from "./TileLayers";
 import RepublicPolygons from "./RepublicPolygons";
 import CitiesMarker from "../Cities/CitiesMarker/CitiesMarker";
 import React from "react";
+import BottomBar from "../BottomBar";
 
 const Map = (params) => {
 
@@ -30,6 +31,7 @@ const Map = (params) => {
                 )
             }
             <Search/>
+            <BottomBar />
             <TileLayers/>
             <RepublicPolygons/>
         </MapContainer>
