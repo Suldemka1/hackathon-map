@@ -18,7 +18,7 @@ const TileLayers = () => {
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
                 </LayersControl.BaseLayer>
-                
+
                 <TileLayer
                     url={`https://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=76735a90e4bb65c353382e372da76262`}
                 />
