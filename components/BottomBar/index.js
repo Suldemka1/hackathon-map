@@ -34,8 +34,8 @@ const BottomBar = () => {
                 <div className="inline-block whitespace-nowrap flex flex-row gap-3">
                     {
                         [0, 1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
-                            // const date = new Date(Number(forecast.forecastTime[item]) * 1000)
-                            // const formatted_date = new Intl.DateTimeFormat('ru-Ru')
+                            const date = new Date(forecast.forecastTime[item] * 1000)
+                            const formatted_date = date.getDate() + "." + date.getMonth()
 
                             const sunset = new Date(forecast.sunset[item] * 1000)
                             const sunsetTime = sunset.getHours() + ":" + sunset.getMinutes()
@@ -43,7 +43,7 @@ const BottomBar = () => {
                             const sunriseTime = sunrise.getHours() + ":" + sunrise.getMinutes()
 
                             return <div key={item} className="max-w-1/12 w-1/5 border-white border-2 text-[15px] rounded p-3">
-                                {/*{formatted_date}*/}
+                                {formatted_date}a
                                 <div className="flex justify-center items-center">
 
                                     {setWeatherIcon(forecast.forecastWeatherCode[item])}
@@ -73,14 +73,7 @@ const BottomBar = () => {
                                         <h6>Закат</h6>
                                         <h6 className="text-end">{sunsetTime}</h6>
                                     </span>
-                                    <span className="grid grid-cols-2">
-                                        <h6>Закат</h6>
-                                        <h6 className="text-end">{sunsetTime}</h6>
-                                    </span>
-                                    <span className="grid grid-cols-2">
-                                        <h6>Закат</h6>
-                                        <h6 className="text-end">{sunsetTime}</h6>
-                                    </span>
+
                                 </div>
                             </div>
                         })

@@ -77,7 +77,7 @@ export const getServerSideProps = async () => {
     ]
 
     for (const item of cities) {
-        const willPushed = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${item.coordinates.lat}&longitude=${item.coordinates.long}&hourly=temperature_2m,relativehumidity_2m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timeformat=unixtime&timezone=auto&start_date=${new Date().toISOString().split('T')[0]}&end_date=2022-12-24`)
+        const willPushed = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${item.coordinates.lat}&longitude=${item.coordinates.long}&hourly=temperature_2m,relativehumidity_2m&daily=weathercode,temperature_2m_max,temperature_2m_min,sunrise,sunset&timeformat=unixtime&timezone=auto&start_date=2022-12-17&end_date=2022-12-24`)
 
             .then((res) => res.json())
             .catch((e) => console.error(e))
