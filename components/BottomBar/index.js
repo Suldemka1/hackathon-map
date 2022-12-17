@@ -33,7 +33,7 @@ const BottomBar = () => {
 
                 <div className="inline-block whitespace-nowrap flex flex-row gap-3">
                     {
-                        [0, 1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
+                        [0, 1, 2, 3, 4, 5, 6, 7].map((item, index) => {
                             const date = new Date(forecast.forecastTime[item] * 1000)
                             const formatted_date = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear()
 
