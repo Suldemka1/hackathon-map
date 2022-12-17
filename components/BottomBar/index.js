@@ -35,7 +35,7 @@ const BottomBar = () => {
                     {
                         [0, 1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
                             const date = new Date(forecast.forecastTime[item] * 1000)
-                            const formatted_date = date.getDate() + "." + date.getMonth()
+                            const formatted_date = date.getDate() + "." + (date.getMonth()+1) + "." + date.getFullYear()
 
                             const sunset = new Date(forecast.sunset[item] * 1000)
                             const sunsetTime = sunset.getHours() + ":" + sunset.getMinutes()
@@ -43,9 +43,10 @@ const BottomBar = () => {
                             const sunriseTime = sunrise.getHours() + ":" + sunrise.getMinutes()
 
                             return <div key={item} className="max-w-1/12 w-1/5 border-white border-2 text-[15px] rounded p-3">
-                                {formatted_date}a
+                                <div>
+                                    {formatted_date}
+                                </div>
                                 <div className="flex justify-center items-center">
-
                                     {setWeatherIcon(forecast.forecastWeatherCode[item])}
                                 </div>
                                 <div>
